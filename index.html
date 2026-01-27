@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Vicente Peris | Unity Developer and Tech Artist Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200;400;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#5D5DFF",
+            ink: "#111111",
+            paper: "#FFFFFF",
+            muted: "#F5F5F7",
+            "border-light": "rgba(17, 17, 17, 0.08)",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
+            display: ["Plus Jakarta Sans", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background: white;
+      color: #111;
+      font-family: Inter, sans-serif;
+    }
+
+    .heading-massive {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+
+    .marker {
+      width: 8px;
+      height: 8px;
+      background: #5d5dff;
+      display: inline-block;
+    }
+
+    .tech-font {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Prevent anchor sections from being hidden behind fixed nav */
+    section[id] {
+      scroll-margin-top: 96px;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <div class="flex items-center gap-4 sm:gap-6">
+
+        <!-- Logo -->
+        <img src="logo.png" alt="Vicente Peris Logo" class="h-8 sm:h-10 w-auto object-contain" />
+
+        <!-- Name -->
+        <span class="font-display font-extrabold tracking-tighter text-xl sm:text-2xl uppercase">
+          Vicente<br />Peris
+        </span>
+
+      </div>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8 lg:gap-10">
+        <a class="text-[10px] font-bold uppercase tracking-[0.3em] hover:text-primary" href="#expertise">Skills</a>
+        <a class="text-[10px] font-bold uppercase tracking-[0.3em] hover:text-primary" href="#projects">Projects</a>
+        <a class="text-[10px] font-bold uppercase tracking-[0.3em] hover:text-primary" href="#work">Experience</a>
+        <a class="text-[10px] font-bold uppercase tracking-[0.3em] hover:text-primary" href="#about">Contact</a>
+
+        <a href="CV_Vicente_Peris_Alagarda_EN.pdf" download
+          class="bg-ink text-white px-6 lg:px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-primary flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">download</span>
+          Download CV
+        </a>
+      </div>
+
+      <!-- Mobile button -->
+      <button id="menuBtn"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 hover:border-primary"
+        aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 py-4 flex flex-col gap-3">
+        <a class="text-xs font-bold uppercase tracking-[0.3em] hover:text-primary py-2" href="#expertise">Skills</a>
+        <a class="text-xs font-bold uppercase tracking-[0.3em] hover:text-primary py-2" href="#projects">Projects</a>
+        <a class="text-xs font-bold uppercase tracking-[0.3em] hover:text-primary py-2" href="#work">Experience</a>
+        <a class="text-xs font-bold uppercase tracking-[0.3em] hover:text-primary py-2" href="#about">Contact</a>
+        <a href="CV_Vicente_Peris_Alagarda_EN.pdf" download
+          class="bg-ink text-white px-6 lg:px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-primary flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">download</span>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="flex items-center pt-28 sm:pt-32 lg:pt-[40rem] pb-16 sm:pb-10 px-4 sm:px-6 lg:px-8 ">
+    <div class="max-w-[1600px] mx-auto w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+
+        <!-- Left / headline -->
+        <div class="lg:col-span-7 xl:col-span-8 flex flex-col items-center lg:items-start gap-6 relative z-10">
+
+          <!-- Portrait -->
+          <img src="logos/me2.png" alt="Vicente Peris" class="w-64 sm:w-80 md:w-96 lg:w-[500px] xl:w-[600px] rounded-xl object-cover border border-gray-200 
+                  relative lg:absolute lg:-bottom-20 lg:-left-24 opacity-100" />
+
+          <!-- Título -->
+          <h1
+            class="heading-massive text-[52px] leading-[0.95] sm:text-[88px] lg:text-[120px] xl:text-[150px] relative z-10 text-center lg:text-left">
+            <div
+              class="flex flex-col sm:flex-col md:flex-row items-center sm:items-center md:items-start gap-2 md:gap-4 justify-center lg:justify-start w-full">
+              <span class="block text-center md:text-left">Unity</span>
+              <span class="block italic text-primary text-center md:text-left">Developer</span>
+            </div>
+            Technical <span class="italic text-primary">Artist</span>
+          </h1>
+
+        </div>
+
+
+        <!-- Right / intro -->
+        <div class="lg:col-span-5 xl:col-span-4 lg:border-l border-gray-200 lg:pl-10 xl:pl-12">
+          <p class="text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-gray-600 italic">
+            Unity Developer and Tech Artist with over 4 years of experience in game development and interactive
+            experiences.
+            Specialized in building multiplatform projects using C#, Unreal Engine and Houdini, with a strong focus on
+            tool creation, workflow automation and performance-driven design.
+          </p>
+
+          <div class="mt-10 sm:mt-12 flex gap-6 sm:gap-8 items-center">
+            <div class="h-[1px] w-14 sm:w-20 bg-gray-300"></div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-gray-400">
+              Valencia, Spain · Open to Remote
+            </span>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-3">
+            <span class="tech-font text-[10px] px-3 py-2 border border-gray-200 rounded-full">Unity</span>
+            <span class="tech-font text-[10px] px-3 py-2 border border-gray-200 rounded-full">C#</span>
+            <span class="tech-font text-[10px] px-3 py-2 border border-gray-200 rounded-full">XR</span>
+            <span class="tech-font text-[10px] px-3 py-2 border border-gray-200 rounded-full">Tech Art</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-40 lg:mb-10" id="expertise">
+    <div class="flex items-end justify-between mb-12 sm:mb-16 lg:mb-24 border-t pt-6 sm:pt-8">
+      <div>
+        <h3 class="text-4xl sm:text-5xl lg:text-6xl font-serif italic">Skills</h3>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border">
+      <div class="bg-white p-8 sm:p-10 lg:p-16 ">
+        <span class="material-symbols-outlined text-4xl text-primary mb-8 sm:mb-10 lg:mb-12">code</span>
+        <h4 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 uppercase">Programming</h4>
+        <p class="text-sm text-gray-600">
+          C# (+4 years), Python, VEX.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 sm:p-10 lg:p-16 ">
+        <span class="material-symbols-outlined text-4xl text-primary mb-8 sm:mb-10 lg:mb-12">view_in_ar</span>
+        <h4 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 uppercase">Serious Games</h4>
+        <p class="text-sm text-gray-600">
+          Development of rehabilitation games and immersive experiences in collaboration with hospitals.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 sm:p-10 lg:p-16">
+        <span class="material-symbols-outlined text-4xl text-primary mb-8 sm:mb-10 lg:mb-12">architecture</span>
+        <h4 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 uppercase">Tech Art</h4>
+        <p class="text-sm text-gray-600">
+          Procedural generation, Houdini pipelines, Blender and Unreal Engine workflows.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 sm:p-10 lg:p-16">
+        <span class="material-symbols-outlined text-4xl text-primary mb-8 sm:mb-10 lg:mb-12">build</span>
+        <h4 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6 uppercase">Tools and Workflow</h4>
+        <p class="text-sm text-gray-600">
+          Git version control, SQL databases, Jira, Trello, Miro and Agile pipelines.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- PROJECTS -->
+  <section class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-40 lg:mb-10" id="projects">
+
+    <div class="flex items-end justify-between mb-12 sm:mb-20 border-t pt-6 sm:pt-8">
+      <div>
+        <h3 class="text-4xl sm:text-5xl lg:text-6xl font-serif italic">
+          Projects
+        </h3>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+      <!-- CARD TEMPLATE -->
+      <!-- WORDYSEE -->
+      <a href="projects/wordysee.html" target="_blank" class="group block border bg-white p-6 sm:p-8 hover:border-primary
+              transition-all duration-300 ease-out
+              hover:scale-[1.04] hover:-translate-y-2
+              hover:shadow-2xl">
+
+        <div class="flex flex-col h-full justify-between">
+
+          <!-- Top content -->
+          <div>
+            <span class="material-symbols-outlined text-3xl text-primary mb-4 block">
+              sports_esports
+            </span>
+
+            <h4 class="font-bold uppercase tracking-wider mb-2">
+              WORDYSEE
+            </h4>
+
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Medical serious game for speech rehabilitation developed in collaboration with Vithas
+              hospitals and Irenea Institute.
+            </p>
+
+            <div class="mt-4 text-[10px] tech-font text-gray-400 group-hover:text-primary transition-colors">
+              Unity · C# · SQL
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div class="flex justify-end mt-6">
+            <span class="text-6xl font-serif font-black text-gray-300
+                   transition-all duration-300 ease-out
+                   group-hover:text-primary
+                   group-hover:translate-x-3">
+              →
+            </span>
+          </div>
+
+        </div>
+      </a>
+
+      <!-- SYLVA -->
+      <a href="projects/sylva.html" target="_blank" class="group block border bg-white p-6 sm:p-8 hover:border-primary
+              transition-all duration-300 ease-out
+              hover:scale-[1.04] hover:-translate-y-2
+              hover:shadow-2xl">
+
+        <div class="flex flex-col h-full justify-between">
+
+          <div>
+            <span class="material-symbols-outlined text-3xl text-primary mb-4 block">
+              sports_esports
+            </span>
+
+            <h4 class="font-bold uppercase tracking-wider mb-2">
+              SYLVA
+            </h4>
+
+            <p class="text-sm text-gray-600 leading-relaxed">
+              3D fantasy game where you control a girl with elemental powers.
+            </p>
+
+            <div class="mt-4 text-[10px] tech-font text-gray-400 group-hover:text-primary transition-colors">
+              Unity · C#
+            </div>
+          </div>
+
+          <div class="flex justify-end mt-6">
+            <span class="text-6xl font-serif font-black text-gray-300
+                   transition-all duration-300 ease-out
+                   group-hover:text-primary
+                   group-hover:translate-x-3">
+              →
+            </span>
+          </div>
+
+        </div>
+      </a>
+
+      <!-- ROOF TOOL -->
+      <a href="projects/roof_tool.html" target="_blank" class="group block border bg-white p-6 sm:p-8 hover:border-primary
+              transition-all duration-300 ease-out
+              hover:scale-[1.04] hover:-translate-y-2
+              hover:shadow-2xl">
+
+        <div class="flex flex-col h-full justify-between">
+
+          <div>
+            <span class="material-symbols-outlined text-3xl text-primary mb-4 block">
+              build
+            </span>
+
+            <h4 class="font-bold uppercase tracking-wider mb-2">
+              ROOF TOOL
+            </h4>
+
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Procedural roof tile instancer created in Houdini and fully functional within Unreal Engine.
+            </p>
+
+            <div class="mt-4 text-[10px] tech-font text-gray-400 group-hover:text-primary transition-colors">
+              Unreal · Houdini · Tools
+            </div>
+          </div>
+
+          <div class="flex justify-end mt-6">
+            <span class="text-6xl font-serif font-black text-gray-300
+                   transition-all duration-300 ease-out
+                   group-hover:text-primary
+                   group-hover:translate-x-3">
+              →
+            </span>
+          </div>
+
+        </div>
+      </a>
+
+      <!-- ID PHOTO CREATOR -->
+      <a href="projects/ID_Photo.html" target="_blank" class="group block border bg-white p-6 sm:p-8 hover:border-primary
+              transition-all duration-300 ease-out
+              hover:scale-[1.04] hover:-translate-y-2
+              hover:shadow-2xl">
+
+        <div class="flex flex-col h-full justify-between">
+
+          <div>
+            <span class="material-symbols-outlined text-3xl text-primary mb-4 block">
+              build
+            </span>
+
+            <h4 class="font-bold uppercase tracking-wider mb-2">
+              ID Photo Creator
+            </h4>
+
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Python automation tool.
+            </p>
+
+            <div class="mt-4 text-[10px] tech-font text-gray-400 group-hover:text-primary transition-colors">
+              Python · Automation
+            </div>
+          </div>
+
+          <div class="flex justify-end mt-6">
+            <span class="text-6xl font-serif font-black text-gray-300
+                   transition-all duration-300 ease-out
+                   group-hover:text-primary
+                   group-hover:translate-x-3">
+              →
+            </span>
+          </div>
+
+        </div>
+      </a>
+
+      <!-- THE BASEMENT VR -->
+      <a href="projects/the_basement.html" target="_blank" class="group block border bg-white p-6 sm:p-8 hover:border-primary
+              transition-all duration-300 ease-out
+              hover:scale-[1.04] hover:-translate-y-2
+              hover:shadow-2xl">
+
+        <div class="flex flex-col h-full justify-between">
+
+          <div>
+            <span class="material-symbols-outlined text-3xl text-primary mb-4 block">
+              view_in_ar
+            </span>
+
+            <h4 class="font-bold uppercase tracking-wider mb-2">
+              The Basement VR
+            </h4>
+
+            <p class="text-sm text-gray-600 leading-relaxed">
+              A first-person horror game where players identify supernatural signs and perform timed rituals to stop a
+              demon
+              before it takes control.
+            </p>
+
+            <div class="mt-4 text-[10px] tech-font text-gray-400 group-hover:text-primary transition-colors">
+              Unity · C# · VR
+            </div>
+          </div>
+
+          <div class="flex justify-end mt-6">
+            <span class="text-6xl font-serif font-black text-gray-300
+                   transition-all duration-300 ease-out
+                   group-hover:text-primary
+                   group-hover:translate-x-3">
+              →
+            </span>
+          </div>
+
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE + EDUCATION -->
+  <section class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mb-24 sm:mb-40 lg:mb-10" id="work">
+
+    <div class="flex items-end justify-between mb-12 sm:mb-20 border-t pt-6 sm:pt-8">
+      <div>
+        <h3 class="text-4xl sm:text-5xl lg:text-6xl font-serif italic">
+          Professional Experience
+        </h3>
+      </div>
+    </div>
+
+    <div class="space-y-16 sm:space-y-24 lg:space-y-10">
+
+      <!-- Job Card -->
+      <div class="bg-muted p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Logo Column -->
+        <div class="lg:col-span-1 flex justify-center lg:justify-start">
+          <a href="https://linktr.ee/ValentiaStudio" target="_blank" rel="noopener noreferrer" class="inline-block">
+            <img src="logos/valentia.png" alt="Valentia Studio Logo" class="h-20 sm:h-24 lg:h-25 w-auto object-contain bg-white p-3 border rounded-xl
+             transition-transform duration-300 hover:scale-105 cursor-pointer" />
+          </a>
+        </div>
+
+
+        <!-- Content Column -->
+        <div class="lg:col-span-9">
+
+          <!-- Company Name (small, metadata style) -->
+          <span class="text-primary uppercase tracking-widest text-xs font-bold sm:text-sm mb-3 sm:mb-4">
+            Valentia Studio · 2025 – Present
+          </span>
+
+          <!-- Role -->
+          <h3 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black mb-4 sm:mb-6">
+            Unity Developer
+          </h3>
+
+          <!-- Description -->
+          <p class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-1xl">
+            Programmer in charge of developing a multiplatform unannounced game. Focused on gameplay systems.
+          </p>
+        </div>
+      </div>
+
+      <!-- Job Card -->
+      <div class="bg-muted p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Logo Column -->
+        <div class="lg:col-span-1 flex justify-center lg:justify-start">
+          <a href="https://www.museomundodeilusionesvalencia.com/" target="_blank" rel="noopener noreferrer" class="inline-block">
+            <img src="logos/ilusiones.png" alt="Ilusiones Logo" class="h-20 sm:h-24 lg:h-25 w-auto object-contain bg-white p-3 border rounded-xl
+                    transition-transform duration-300 hover:scale-105" />
+          </a>
+        </div>
+
+        <!-- Content Column -->
+        <div class="lg:col-span-9">
+          <!-- Company Name (small, metadata style) -->
+          <span class="text-primary uppercase tracking-widest text-xs font-bold sm:text-sm mb-3 sm:mb-4">
+            Museum of Illusions · 2023 – 2024
+          </span>
+
+          <!-- Role -->
+          <h3 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black mb-4 sm:mb-6">
+            VR Experience Guide
+          </h3>
+
+          <!-- Description -->
+          <p class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-1xl">
+            Responsible for monitoring and guiding virtual reality experiences for visitors, ensuring hardware
+            reliability and high-quality user interaction.
+          </p>
+        </div>
+      </div>
+
+      <!-- Job Card -->
+      <div class="bg-muted p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Logo Column -->
+        <div class="lg:col-span-1 flex justify-center lg:justify-start">
+          <a href="https://lableni.webs.upv.es/" target="_blank" rel="noopener noreferrer" class="inline-block">
+          <img src="logos/upv.png" alt="Universitat Politècnica de València Logo" class="h-20 sm:h-24 lg:h-25 w-auto object-contain bg-white p-3 border rounded-xl
+                    transition-transform duration-300 hover:scale-105" />
+          </a>
+        </div>
+
+        <!-- Content Column -->
+        <div class="lg:col-span-9">
+          <!-- Company Name (small, metadata style) -->
+          <span class="text-primary uppercase tracking-widest text-xs font-bold sm:text-sm mb-3 sm:mb-4">
+            Lab LENI · UPV · 2022 – 2023
+          </span>
+
+          <!-- Role -->
+          <h3 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-black mb-4 sm:mb-6">
+            C# Programmer
+          </h3>
+
+          <!-- Description -->
+          <p class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-1xl">
+            Developed a serious game for speech rehabilitation after brain injury in collaboration with Vithas
+            hospitals and Irenea Institute. Responsible for gameplay programming and UI systems.
+          </p>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="border-t pt-12 sm:pt-16 lg:pt-20">
+
+        <div class="flex items-center gap-4 mb-10">
+          <span class="marker"></span>
+          <span class="tech-font">Education</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <div class="bg-white border p-8 sm:p-10 hover:border-primary transition">
+            <img src="logos/taw_logo.jpeg" alt="TechArt Worlds Logo"
+              class="h-10 sm:h-12 w-auto object-contain mb-4 sm:mb-6" />
+            <h4 class="font-bold text-lg mb-2">
+              Master in Tech Art & Procedural Generation
+            </h4>
+            <p class="text-primary uppercase tracking-widest text-xs mb-2">
+              TechArt Worlds · 2024 – 2025
+            </p>
+          </div>
+
+          <div class="bg-white border p-8 sm:p-10 hover:border-primary transition">
+            <img src="logos/florida_logo2.jpg" alt="Florida Universitària Logo"
+              class="h-7 sm:h-10 w-auto object-contain mb-4 sm:mb-6" />
+            <h4 class="font-bold text-lg mb-2">
+              Degree in design and development of video games and interactive experiences
+            </h4>
+            <p class="text-primary uppercase tracking-widest text-xs mb-2">
+              Florida Universitària · 2019 – 2023
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT / CONTACT -->
+  <section class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-28 lg:mb-10" id="about">
+    <div class="bg-muted p-8 sm:p-12 lg:p-20 xl:p-32 border-l-8 border-primary">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end">
+        <div>
+          <h2 class="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl heading-massive mb-8 sm:mb-12">
+            Let's <span class="text-primary italic">talk</span><br />
+          </h2>
+          <p class="text-lg sm:text-xl text-gray-600 max-w-md leading-relaxed mb-10 sm:mb-16">
+            Available for Unity and C# development roles, XR projects and serious games production. Open
+            to remote or on-site opportunities.
+          </p>
+          <a class="group flex items-center gap-4 sm:gap-6 text-xl sm:text-2xl lg:text-4xl font-display font-extrabold tracking-tighter hover:text-primary break-all"
+            href="mailto:vicenteperis1@gmail.com">
+            vicenteperis1@gmail.com
+          </a>
+        </div>
+
+        <div class="border p-8 md:p-10 bg-white hover:border-primary transition">
+
+          <div class="flex items-center justify-center gap-12">
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/vicente-peris-alagarda/" target="_blank"
+              class="group hover:opacity-80 transition">
+              <img src="logos/linkedin.png" alt="LinkedIn" class="h-12 w-12 object-contain" />
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/vicenteperis1" target="_blank" class="group hover:opacity-80 transition">
+              <img src="logos/github.png" alt="GitHub" class="h-12 w-12 object-contain" />
+            </a>
+
+            <!-- Itch.io -->
+            <a href="https://vicente-peris.itch.io/" target="_blank" class="group hover:opacity-80 transition">
+              <img src="logos/itchio.png" alt="Itch.io" class="h-12 w-12 object-contain" />
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white py-12 sm:py-16 lg:py-20 border-t">
+    <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-8 text-center md:text-left">
+        <p class="text-[10px] uppercase tracking-[0.45em] sm:tracking-[0.5em] text-gray-400">
+          © 2026 Vicente Peris — Unity Developer and Tech Artist
+        </p>
+        <p class="text-[10px] uppercase tracking-[0.45em] sm:tracking-[0.5em] text-gray-400">
+          Valencia, Spain · Remote Worldwide
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    function closeMenu() {
+      mobileMenu.classList.add("hidden");
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.querySelector(".material-symbols-outlined").textContent = "menu";
+    }
+
+    menuBtn.addEventListener("click", () => {
+      const isHidden = mobileMenu.classList.contains("hidden");
+      if (isHidden) {
+        mobileMenu.classList.remove("hidden");
+        menuBtn.setAttribute("aria-expanded", "true");
+        menuBtn.querySelector(".material-symbols-outlined").textContent = "close";
+      } else {
+        closeMenu();
+      }
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => closeMenu());
+    });
+
+    // Close menu when resizing to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) closeMenu();
+    });
+  </script>
+</body>
+
+</html>
